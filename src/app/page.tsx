@@ -1,16 +1,12 @@
-import { EmptySpace } from "@/components/EmptySpace";
-import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
-import { Technologie } from "@/components/Technologie";
+import Header from "@/components/header";
+import HeroTop from "@/components/hero-top";
 
 export default function Home() {
   return (
-    <main className="w-full h-screen">
+    <main>
       <Header />
-        <Hero />
-        <EmptySpace />
-        <Technologie />
-        <EmptySpace />
+      <HeroTop />
+      <div className="h-12"></div>
     </main>
   );
 }

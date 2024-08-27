@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
-
-const inter = Inter({ subsets: ["latin"] });
+import { ThemeProvider } from "@/components/theme/theme-provider";
+// import './i18n';
 
 export const metadata: Metadata = {
-  title: "Dimitri Mabom - Porfolio",
-  description: "Developpeur front End",
+  title: "Dimitri Mabom - Portfolio",
+  description: "Je Suis un dev web front end",
 };
 
 export default function RootLayout({
@@ -17,15 +15,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >{children}
-          </ThemeProvider>
-          </body>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
