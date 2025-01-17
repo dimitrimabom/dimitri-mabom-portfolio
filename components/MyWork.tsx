@@ -1,51 +1,69 @@
+"use client";
+import Works from "@/_data/Works.json";
+import Work from "./Work";
 import { Section } from "./Section";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
+
+interface WorkItem {
+  title: string;
+  description: string;
+}
 
 export const MyWork = () => {
-  return (
-    <Section>
-      <h2 className="text-3xl font-bold">Mes Projets</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-        {/* Exemple de projet */}
-        
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
 
-        {/* Ajouter d'autres projets de manière similaire */}
-        <div className="bg-gradient-to-br from-purple-800 to-gray-900 p-4 rounded-lg shadow-lg">
-          <h3 className="text-xl font-bold text-white">E-commerce App</h3>
-          <p className="text-gray-300 mt-2">
-            Une application e-commerce complète avec intégration Stripe et
-            Next.js.
-          </p>
-          <div className="flex flex-wrap gap-2 mt-4">
-            <span className="bg-gray-700 text-gray-300 text-sm px-3 py-1 rounded-md">
-              Next.js
-            </span>
-            <span className="bg-gray-700 text-gray-300 text-sm px-3 py-1 rounded-md">
-              Stripe
-            </span>
-            <span className="bg-gray-700 text-gray-300 text-sm px-3 py-1 rounded-md">
-              TailwindCSS
-            </span>
-          </div>
-          <div className="flex justify-between items-center mt-4">
-            <a
-              href="#"
-              className="text-blue-500 hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-            <a
-              href="#"
-              className="text-green-500 hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo
-            </a>
-          </div>
-        </div>
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  return (
+    <>
+      <Section className="pb-6">
+        <h2 className="text-4xl font-semibold">Projets</h2>
+      </Section>
+      <div className="w-full flex items-center justify-center">
+        <section className="w-9/12 mx-20 flex m-auto gap-4 flex-col">
+          <Carousel setApi={setApi} className="w-full">
+            <CarouselContent>
+              {Works.map((work: WorkItem, index: number) => (
+                <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/2">
+                  <span className="text-4xl font-semibold">
+                    <div className="flex gap-4 flex-row">
+                      <Work
+                        key={index}
+                        title={work.title}
+                        description={work.description}
+                      />
+                    </div>
+                  </span>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </section>
       </div>
-    </Section>
+    </>
   );
 };
