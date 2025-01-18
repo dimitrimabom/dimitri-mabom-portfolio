@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Section } from "./Section";
-import { Button, buttonVariants } from "./ui/button";
+import {buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { Github, Linkedin } from "lucide-react";
 

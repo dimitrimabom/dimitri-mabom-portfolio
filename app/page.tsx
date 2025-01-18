@@ -16,9 +16,9 @@ export default function Home() {
       <TechnologiesLine />
       <MyWork />
 
-      {/* <Section>
+      <Section>
         
-        <section className="py-16 px-6">
+        {/* <section className="py-16 px-6">
           <h2 className="text-3xl font-bold ">Services</h2>
           <div className="grid md:grid-cols-3 gap-8 mt-8">
             <div className="">
@@ -85,9 +85,9 @@ export default function Home() {
             </button>
           </form>
         </section>
-
+*/}
       </Section>
-       */}
+       
 
       <Spacing size="lg" />
       <Footer />

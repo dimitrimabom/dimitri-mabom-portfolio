@@ -9,7 +9,7 @@ export const Hero = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const element = document.getElementById("azerty");
+    const element = document.getElementById("myName");
     if (!element) return;
 
     const observer = new IntersectionObserver(
@@ -40,7 +40,8 @@ export const Hero = () => {
   return (
     <Section className="flex max-md:flex-col items-start gap-4">
       <div className="flex-[2] flex flex-col h-64 justify-around">
-        <h2 className="text-5xl text-primary" id="azerty">Dimitri Mabom</h2>
+        {isVisible === false && <h2 className="text-5xl text-primary">Dimitri Mabom</h2>}
+        {isVisible === true && <h2 id="myName" className="text-5xl text-primary">Dimitri Mabom</h2>}
         <h3 className="text-3xl">Développeur Front-End</h3>
         <p>
         Je suis passionné par le code et tout ce qui touche au web. J’adore créer des interfaces modernes et intuitives avec des outils comme <strong>React.js</strong> et <strong>Next.js</strong>. Mais surtout, je mets un point d’honneur à transformer chaque projet en quelque chose d’unique, à l’image de vos idées.

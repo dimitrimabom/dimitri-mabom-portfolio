@@ -16,6 +16,7 @@ import { Badge } from "./ui/badge";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Title } from "./Title";
+import Image from "next/image";
 
 interface Project {
   id: number;
@@ -104,9 +105,11 @@ export const MyWork = () => {
             className="w-full flex items-center justify-center"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-gradient-to-br from-primary/10 to-secondary/10 p-8 shadow-lg  max-w-4xl">
-              <img
+              <Image
                 src={projects[currentIndex].image || "/images/AltPlus-pic.png"}
                 alt={projects[currentIndex].title}
+                width={500}
+                height={500}
                 className="w-full h-64 object-cover shadow-md"
               />
               <div className="space-y-4">
