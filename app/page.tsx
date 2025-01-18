@@ -4,19 +4,20 @@ import { MyWork } from "@/components/MyWork";
 import { Section } from "@/components/Section";
 import { Spacing } from "@/components/Spacing";
 import { Footer } from "@/components/Footer";
+import TechnologiesLine from "@/components/TechnologiesLine";
 
 export default function Home() {
+  
   return (
     <main>
       <Header />
       <Spacing size="md" />
       <Hero />
-      <Spacing size="md" />
+      <TechnologiesLine />
       <MyWork />
-      
 
-      <Section>
-        {/* Services */}
+      {/* <Section>
+        
         <section className="py-16 px-6">
           <h2 className="text-3xl font-bold ">Services</h2>
           <div className="grid md:grid-cols-3 gap-8 mt-8">
@@ -41,7 +42,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact */}
         <section className="py-16 px-6">
           <h2 className="text-3xl font-bold ">Me Contacter</h2>
           <form className="mt-8 max-w-lg mx-auto p-6 rounded-md">
@@ -87,8 +87,10 @@ export default function Home() {
         </section>
 
       </Section>
-      
-        <Footer />
+       */}
+
+      <Spacing size="lg" />
+      <Footer />
     </main>
   );
 }
