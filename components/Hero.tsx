@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { Section } from "./Section";
-import { Button, buttonVariants } from "./ui/button";
-import Link from "next/link.js";
-import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
+import Link from "next/link";
 import { Title } from "./Title";
 
 export const Hero = () => {
@@ -12,7 +11,7 @@ export const Hero = () => {
         <Title level={1} size="lg" className="text-4xl mb-0">
           Dimitri Mabom
         </Title>
-        <Title level={2} size="md" className="text-3xl  font-normal mb-0">
+        <Title level={2} size="md" className="text-3xl font-normal mb-0">
           Développeur Front-End
         </Title>
         <p>
@@ -23,14 +22,18 @@ export const Hero = () => {
           chose d’unique, à l’image de vos idées.
         </p>
         <div className="flex gap-2">
-          <Link
+          {/* Lien pour télécharger le CV */}
+          <a
+            href="/api/get-cv" // Appelle directement l'API pour télécharger le PDF
             target="_blank"
-            href="/pdf/CV_Dimitri_Mabom.pdf"
-            className={cn(buttonVariants(), "gap-2")}
+            rel="noopener noreferrer"
+            className="btn-class gap-2"
           >
-            Mon CV
-          </Link>
-          <Button variant={"outline"}>Me Contacter</Button>
+            Télécharger Mon CV
+          </a>
+
+          {/* Bouton pour contacter */}
+          <Button variant="outline">Me Contacter</Button>
         </div>
       </div>
       <div className="flex-1 flex content-end relative h-full w-full max-md:w-2/3 max-md:text-center">
