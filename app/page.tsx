@@ -1,3 +1,5 @@
+"use client";
+
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { MyWork } from "@/components/MyWork";
@@ -5,19 +7,19 @@ import { Section } from "@/components/Section";
 import { Spacing } from "@/components/Spacing";
 import { Footer } from "@/components/Footer";
 import TechnologiesLine from "@/components/TechnologiesLine";
+import { useVisibility } from "@/hooks/useVisibility";
 
 export default function Home() {
-  
+  const isHeroVisible = useVisibility("myName");
   return (
     <main>
-      <Header />
-      <Spacing size="md" />
+      <Header isVisible={isHeroVisible} />
+      <Spacing size="sm" />
       <Hero />
       <TechnologiesLine />
       <MyWork />
 
       <Section>
-        
         {/* <section className="py-16 px-6">
           <h2 className="text-3xl font-bold ">Services</h2>
           <div className="grid md:grid-cols-3 gap-8 mt-8">
@@ -87,7 +89,6 @@ export default function Home() {
         </section>
 */}
       </Section>
-       
 
       <Spacing size="lg" />
       <Footer />

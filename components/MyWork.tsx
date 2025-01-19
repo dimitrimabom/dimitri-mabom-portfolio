@@ -17,6 +17,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Title } from "./Title";
 import Image from "next/image";
+import { Spacing } from "./Spacing";
 
 interface Project {
   id: number;
@@ -37,7 +38,7 @@ const projects: Project[] = [
     description:
       "Une start-up innovante fondée en 2021 par une équipe de jeunes développeurs talentueux et passionnés.",
     image: "/images/AltPlus-pic.png",
-    language: ["Next.js", "Langchain", "MongoDB", "Supabase", "tailwind"],
+    language: ["HTML", "CSS", "JavaScript"],
     url: "https://altplus.dev/",
     githubUrl: "private",
     star: 0,
@@ -49,7 +50,7 @@ const projects: Project[] = [
     description:
       "Landing page de Internship Report, une Application pour Sauvegarder Vos Rapports de Stage !",
     image: "/images/internship-vitrin.png",
-    language: ["Next.js", "Langchain", "MongoDB", "Supabase", "tailwind"],
+    language: ["HTML", "CSS", "JavaScript"],
     url: "https://internship-vitrin.onrender.com/",
     githubUrl: "https://github.com/artsiders/internship-vitrin.git",
     star: 2,
@@ -87,7 +88,7 @@ export const MyWork = () => {
       <Title level={1} size="lg">
         Mes Réalisations
       </Title>
-      <h2 className=""></h2>
+      <Spacing size="sm" />
       <div className="relative w-full overflow-hidden flex items-center justify-center">
         <AnimatePresence initial={false} custom={currentIndex}>
           <motion.div
@@ -104,18 +105,18 @@ export const MyWork = () => {
             }}
             className="w-full flex items-center justify-center"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-gradient-to-br from-primary/10 to-secondary/10 p-8 shadow-lg  max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-gradient-to-br from-primary/10 to-secondary/10 p-10 shadow-lg  max-w-4xl">
               <Image
                 src={projects[currentIndex].image || "/images/AltPlus-pic.png"}
                 alt={projects[currentIndex].title}
                 width={500}
                 height={500}
-                className="w-full h-64 object-cover shadow-md"
+                className="w-full h-64 object-cover shadow-md max-md:h-32"
               />
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-primary">
+                <Title level={1} size="md">
                   {projects[currentIndex].title}
-                </h2>
+                </Title>
                 <p className="text-muted-foreground">
                   {projects[currentIndex].description}
                 </p>
