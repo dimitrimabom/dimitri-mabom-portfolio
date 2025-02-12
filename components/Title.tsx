@@ -1,7 +1,7 @@
 interface TitleProps {
   children: React.ReactNode;
   level?: 1 | 2 | 3 | 4 | 5 | 6;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "lg2";
   className?: string;
   underline?: boolean;
 }
@@ -19,6 +19,7 @@ export const Title: React.FC<TitleProps> = ({
     sm: "text-lg md:text-xl",
     md: "text-xl md:text-2xl lg:text-3xl",
     lg: "text-2xl md:text-3xl lg:text-4xl xl:text-5xl",
+    lg2: "text-4xl md:text-5xl lg:text-6xl xl:text-5xl",
   };
 
   const baseClasses = "font-bold mb-4";

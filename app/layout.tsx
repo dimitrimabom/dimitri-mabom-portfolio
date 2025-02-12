@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={roboto.className}>
+    <html lang="en" className={roboto.className}>
       <head>
         <link
           rel="apple-touch-icon"
