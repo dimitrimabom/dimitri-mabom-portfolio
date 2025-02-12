@@ -17,7 +17,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Title } from "./Title";
 import Image from "next/image";
-import { Spacing } from "./Spacing";
+import { useTranslation } from "react-i18next";
 
 interface Project {
   id: number;
@@ -71,6 +71,9 @@ const projects: Project[] = [
 ];
 
 export const MyWork = () => {
+
+  const { t } = useTranslation();
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -86,10 +89,9 @@ export const MyWork = () => {
   return (
     <Section>
       <Title level={1} size="lg">
-        Mes Réalisations
+      {t('Works')}
       </Title>
-      <Spacing size="sm" />
-      <div className="relative w-full overflow-hidden flex items-center justify-center">
+      <div className="relative w-full overflow-hidden flex items-center justify-center pt-2">
         <AnimatePresence initial={false} custom={currentIndex}>
           <motion.div
             key={currentIndex}
