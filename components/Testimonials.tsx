@@ -34,7 +34,7 @@ const Testimonials = () => {
                     <CarouselContent className="gap-3">
                         {testimonials.map((testimonial, index) => (
                             <CarouselItem key={index} className="p-6 bg-gradient-to-br from-primary/10 to-secondary/10 md:basis-1/2 lg:basis-1/3">
-                                <p className="italic text-gray-300">"{testimonial.feedback}"</p>
+                                <p className="italic text-gray-300">{testimonial.feedback}</p>
                                 <h3 className="mt-4 font-semibold">{testimonial.name}</h3>
                                 <span className="text-gray-400 text-sm">{testimonial.role}</span>
                             </CarouselItem>
