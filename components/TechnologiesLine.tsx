@@ -15,20 +15,12 @@ export default function TechnologiesLine() {
       logo: "/logo/tailwindcss-icon.svg",
     },
     {
-      name: "Node.js",
-      logo: "/logo/nodejs-icon.svg",
-    },
-    {
       name: "MySQL",
       logo: "/logo/mysql-icon.svg",
     },
     {
       name: "Git",
       logo: "/logo/git-icon.svg",
-    },
-    {
-      name: "WordPress",
-      logo: "/logo/wordpress-icon.svg",
     },
   ];
 

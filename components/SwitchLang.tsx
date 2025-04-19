@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 const LANGUAGES = [
@@ -20,40 +20,44 @@ const SwitchLang = () => {
     setOpen(false);
   };
 
-  return (
-    <div className="relative inline-block">
-      <button
-        onClick={() => setOpen(!open)}
-        className="flex items-center p-2 bg-background hover:bg-accent"
-      >
-        <Image
-          width={20}
-          height={16}
-          src={LANGUAGES.find((lang) => lang.code === selectedLang)?.flag || ""}
-          alt="flag"
-          className="mr-2"
-        />
-        {LANGUAGES.find((lang) => lang.code === selectedLang)?.label}
-      </button>
 
-      {open && (
-        <div
-          ref={dropdownRef}
-          className="absolute mt-2 bg-background border w-max"
+  return (
+    <>
+      {open ? <div className="h-[99.9vh] w-[98.9vw] absolute z-0 -top-px -left-px overflow-hidden" onClick={() => setOpen(false)}></div> : ""}
+      <div className="relative inline-block z-50">
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex items-center p-2 bg-background hover:bg-accent"
         >
-          {LANGUAGES.map((lang) => (
-            <button
-              key={lang.code}
-              onClick={() => changeLanguage(lang.code)}
-              className="flex items-center w-full p-2 hover:bg-accent"
-            >
-              <Image width={20} height={16} src={lang.flag} alt="flag" className="mr-2" />
-              {lang.label}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
+          <Image
+            width={20}
+            height={16}
+            src={LANGUAGES.find((lang) => lang.code === selectedLang)?.flag || ""}
+            alt="flag"
+            className="mr-2"
+          />
+          {LANGUAGES.find((lang) => lang.code === selectedLang)?.label}
+        </button>
+
+        {open && (
+          <div
+            ref={dropdownRef}
+            className="absolute mt-2 bg-background border w-max"
+          >
+            {LANGUAGES.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => changeLanguage(lang.code)}
+                className="flex items-center w-full p-2 hover:bg-accent"
+              >
+                <Image width={20} height={16} src={lang.flag} alt="flag" className="mr-2" />
+                {lang.label}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
