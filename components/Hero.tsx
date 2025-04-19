@@ -8,8 +8,7 @@ import { cn } from "@/lib/utils";
 import { Title } from "./Title";
 import { useTranslation } from "react-i18next";
 
-const handleDownload = (e: any) => {
-  e.preventDefault();
+const handleDownload = () => {
   const link = document.createElement('a');
   link.href = '/pdf/CV_Dimitri_Mabom.pdf';
   link.download = 'CV_Dimitri_Mabom.pdf';
@@ -33,7 +32,7 @@ export const Hero = () => {
         <div className="flex gap-2">
           
         <Button onClick={handleDownload}>{t('cv')}</Button>
-        
+
           <Link
             target="_blank"
             href="mailto:dimitrymabom@gmail.com"
