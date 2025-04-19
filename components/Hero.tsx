@@ -2,11 +2,19 @@
 
 import Image from "next/image";
 import { Section } from "./Section";
-import { buttonVariants } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import Link from "next/link.js";
 import { cn } from "@/lib/utils";
 import { Title } from "./Title";
 import { useTranslation } from "react-i18next";
+
+const handleDownload = (e: any) => {
+  e.preventDefault();
+  const link = document.createElement('a');
+  link.href = '/pdf/CV_Dimitri_Mabom.pdf';
+  link.download = 'CV_Dimitri_Mabom.pdf';
+  link.click();
+};
 
 export const Hero = () => {
 
@@ -23,13 +31,9 @@ export const Hero = () => {
         </Title>
         <p dangerouslySetInnerHTML={{ __html: t('welcome')  }}/>
         <div className="flex gap-2">
-          <Link
-            target="_blank"
-            href="/pdf/CV_Dimitri_Mabom.pdf"
-            className={cn(buttonVariants(), "gap-2")}
-          >
-            {t('cv')}
-          </Link>
+          
+        <Button onClick={handleDownload}>{t('cv')}</Button>
+        
           <Link
             target="_blank"
             href="mailto:dimitrymabom@gmail.com"
