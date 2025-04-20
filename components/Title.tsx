@@ -16,10 +16,10 @@ export const Title: React.FC<TitleProps> = ({
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   const sizeClasses = {
-    sm: "text-lg md:text-xl",
-    md: "text-xl md:text-2xl lg:text-3xl",
-    lg: "text-2xl md:text-3xl lg:text-4xl xl:text-5xl",
-    lg2: "text-4xl md:text-5xl lg:text-6xl xl:text-5xl",
+    sm: "text-sm md:text-lg",
+    md: "text-lg md:text-xl lg:text-2xl",
+    lg: "text-2xl md:text-2xl lg:text-3xl xl:text-4xl",
+    lg2: "text-3xl md:text-3xl lg:text-4xl xl:text-3xl",
   };
 
   const baseClasses = "font-bold mb-4";

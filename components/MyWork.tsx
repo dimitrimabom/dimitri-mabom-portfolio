@@ -96,7 +96,7 @@ export const MyWork = () => {
       </Title>
 
       <div className="relative w-full overflow-hidden flex items-center justify-center pt-2 flex-col">
-        <Carousel setApi={setApi} className="w-full max-w-4xl">
+        <Carousel setApi={setApi} className="w-full max-w-4xl cursor-pointer">
           <CarouselContent>
             {projects.map((project) => (
               <CarouselItem key={project.id}>
@@ -167,8 +167,6 @@ export const MyWork = () => {
                 </div>
               </CarouselItem>
             ))}
-
-
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />

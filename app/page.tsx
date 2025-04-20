@@ -5,7 +5,6 @@ import { Hero } from "@/components/Hero";
 import { MyWork } from "@/components/MyWork";
 import { Spacing } from "@/components/Spacing";
 import { Footer } from "@/components/Footer";
-import TechnologiesLine from "@/components/TechnologiesLine";
 import { useVisibility } from "@/hooks/useVisibility";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
@@ -20,7 +19,7 @@ export default function Home() {
       <Header isVisible={isHeroVisible} />
       <Spacing size="sm" />
       <Hero />
-      <TechnologiesLine />
+      <Spacing size="sm" />
       <MyWork />
       <Spacing size="sm" />
       <Services />

@@ -11,8 +11,8 @@ interface HeroProps {
 
 export const Header = ({ isVisible }: HeroProps) => {
   return (
-    <header className="sticky top-0 py-4 font-bold bg-background z-50 ">
-      <Section className="flex items-baseline items-center">
+    <header className="sticky top-0 py-4 font-bold bg-background z-50">
+      <Section className="flex items-baseline items-center max-w-6xl">
         <h1 className="text-lg pl-2">{isVisible ? "" : "Dimitri Mabom"}</h1>
         <div className="flex-1" />
         <ul className="flex gap-2 items-center">

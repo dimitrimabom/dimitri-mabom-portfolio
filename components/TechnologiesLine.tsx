@@ -25,11 +25,11 @@ export default function TechnologiesLine() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12 flex flex-col items-center">
-      <div className="flex items-center gap-8 overflow-x-auto pb-4 flex-wrap justify-center">
+    <div className="max-w-5xl mt-2 flex flex-col">
+      <div className="flex gap-8 overflow-x-auto pb-4 flex-wrap">
         {technologies.map((tech) => (
           <div key={tech.name} className="flex-shrink-0">
-            <div className="relative w-6 h-6 sm:w-12 sm:h-12 shadow-sm p-2">
+            <div className="relative w-8 h-8 sm:w-12 sm:h-12 shadow-sm p-2">
               <Image
                 src={tech.logo}
                 alt={tech.name}

@@ -14,12 +14,12 @@ const Contact = () => {
         <div>
           <Title level={1} size="lg">{t('ContactTilte')}</Title>
           <p className="p-4">
-            🚀 Vous avez un projet ou une idée à développer ? Discutons-en et trouvons la meilleure solution ensemble.
+          🚀 Vous avez un projet ou une idée à développer ? Discutons-en et trouvons la meilleure solution ensemble.
           </p>
           <Link
             target="_blank"
             href="mailto:dimitrymabom@gmail.com"
-            className={cn(buttonVariants(), "px-6 py-3")}
+            className={cn(buttonVariants(), "ml-6 px-6 py-3")}
           >
             📩 {t('contact')}
           </Link>
